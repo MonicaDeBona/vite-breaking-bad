@@ -1,17 +1,9 @@
 <script>
-
 export default{
     name: 'CardComponent',
     props: {
         card: Object,
     },
-
-    data () {
-    return {
-        store,
-    }
-    }
-
 }
 </script>
 

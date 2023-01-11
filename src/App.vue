@@ -43,7 +43,7 @@ export default {
   </header>
 
   <main>
-    <AppMain :cards="store.cardsList" />
+    <AppMain />
   </main>
 
 </template>
