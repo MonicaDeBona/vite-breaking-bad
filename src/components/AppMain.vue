@@ -25,12 +25,9 @@
 
     <div class="select-archetypes container">
         <select name="archetypes" id="choose-archetypes" @change="$emit('search', searchText)" v-model="searchText" >
-            <option value="alien">Alien</option>
-            <option value="laval">Laval</option>
-            <option value="vylon">Vylon</option>
-            <option value="inzektor">Inzektor</option>
-            <option value="umi">Umi</option>
-            <option value="gusto">Gusto</option>
+            <option :value="value" v-for="value in values">
+                {{ value }}
+            </option>
         </select>
     </div>
 
