@@ -5,9 +5,28 @@
 </script>
 
 <template>
-    <h2>Header</h2>
+    <div class="container">
+        <div class="logo">
+            <img src="../assets/imgs/main-logo.jpg" alt="">
+            <h1>Yu-Gi-Oh</h1>
+        </div>
+    </div>
 </template>
 
 <style lang="scss" scoped>
+    .container {
+        width: 70%;
+        margin: auto;
+    }
 
+    .logo {
+        display: flex;
+        align-items: center ;  
+        padding: 2rem;
+
+        img {
+            width: 10%;
+            margin-right: 1rem;
+        }
+    }
 </style>
