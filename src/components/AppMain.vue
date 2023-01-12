@@ -11,23 +11,28 @@
         data() {
             return {
                 store,
-                searchText: ''
+                searchText: ['Alien', 'Laval', 'Vylon', 'Inzektor', 'Umi', 'Gusto'],
             }
         },
     }
 </script>
 
 <template>
-    <!-- <div class="select-archetypes container">
-        <select name="archetypes" id="choose-archetypes">
-            
-        </select>
-    </div> -->
+
+
+
+
     <div class="select-archetypes container">
-        <label for="searchField">Cerca</label>
-        <input type="text" name="searchField" id="searchField" v-model.trim="searchText"
-        @keyup.enter="$emit('search', searchText)">
+        <select name="archetypes" id="choose-archetypes" @change="$emit('search', searchText)" >
+            <option value=""></option>
+        </select>
     </div>
+
+
+
+
+
+
     <div class="container">
         <div class="card-found">
             <p>Found {{ store.cardsList.length }} cards</p>
