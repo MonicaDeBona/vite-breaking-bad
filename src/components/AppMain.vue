@@ -11,7 +11,8 @@
         data() {
             return {
                 store,
-                searchText: ['Alien', 'Laval', 'Vylon', 'Inzektor', 'Umi', 'Gusto'],
+                values: ['Alien', 'Laval', 'Vylon', 'Inzektor', 'Umi', 'Gusto'],
+                searchText: ''
             }
         },
     }
@@ -23,8 +24,13 @@
 
 
     <div class="select-archetypes container">
-        <select name="archetypes" id="choose-archetypes" @change="$emit('search', searchText)" >
-            <option value=""></option>
+        <select name="archetypes" id="choose-archetypes" @change="$emit('search', searchText)" v-model="searchText" >
+            <option value="alien">Alien</option>
+            <option value="laval">Laval</option>
+            <option value="vylon">Vylon</option>
+            <option value="inzektor">Inzektor</option>
+            <option value="umi">Umi</option>
+            <option value="gusto">Gusto</option>
         </select>
     </div>
 
