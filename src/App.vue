@@ -10,6 +10,7 @@ export default {
   data() {
     return {
       store,
+      apiUrl:'https://db.ygoprodeck.com/api/v7/cardinfo.php?',
     }
   },
 
@@ -19,9 +20,13 @@ export default {
   },
 
   methods: {
-    getCardElement() {
-      axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=10&offset=0', {
+    getCardElement(searchArchetypes) {
+      axios.get(this.apiUrl, {
         params: {
+          archetype: searchArchetypes,
+          num: 10,
+          offset: 0
+
         }
       })
       .then((response) => {
@@ -31,7 +36,7 @@ export default {
   },
 
   created() {
-    this.getCardElement();
+    this.getCardElement(this.currentArchetypes);
   }
 }
 </script>
@@ -43,7 +48,7 @@ export default {
   </header>
 
   <main>
-    <AppMain />
+    <AppMain @search="getCardElement"/>
   </main>
 
 </template>

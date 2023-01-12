@@ -15,7 +15,7 @@
 
 <style lang="scss" scoped>
     .container {
-        width: 70%;
+        width: 75%;
         margin: auto;
     }
 

@@ -11,12 +11,23 @@
         data() {
             return {
                 store,
+                searchText: ''
             }
         },
     }
 </script>
 
 <template>
+    <!-- <div class="select-archetypes container">
+        <select name="archetypes" id="choose-archetypes">
+            
+        </select>
+    </div> -->
+    <div class="select-archetypes container">
+        <label for="searchField">Cerca</label>
+        <input type="text" name="searchField" id="searchField" v-model.trim="searchText"
+        @keyup.enter="$emit('search', searchText)">
+    </div>
     <div class="container">
         <div class="card-found">
             <p>Found {{ store.cardsList.length }} cards</p>
@@ -30,6 +41,10 @@
 
 <style lang="scss" scoped>
 
+    #choose-archetypes {
+        padding: .5rem 3rem;
+        margin: 1rem 0;
+    }
     .container {
         width: 55%;
         margin: 0 auto;
